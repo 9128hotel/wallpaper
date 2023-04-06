@@ -2,8 +2,9 @@
 name = "wallpaper"
 version = "1.0.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+authors = ["Skye <https://github.com/9128hotel>"]
+description = "A Rust program to set the desktop background on Windows 10"
+repository = "https://github.com/9128hotel/wallpaper"
 
 [dependencies]
 image = "0.24.0"
