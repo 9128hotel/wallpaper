@@ -1,2 +1,5 @@
 /target
 Cargo.lock
+
+check/.vs
+check/check/x64
