@@ -1,5 +1,5 @@
-/target
-Cargo.lock
+wallpaper/target
+wallpaper/Cargo.lock
 
 check/.vs
 check/check/x64
