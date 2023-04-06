@@ -34,6 +34,6 @@ C:\Wallpapers\background.jpg\
 
 Any other problems, please submit a pull request or an issue.
 
-## License, copy write, and contact
+## License, copyright, and contact
 
 The code is licensed under a modified FPA MIT, but that may change in the future. If you'd like to do something with the software that isn't permitted under the license, please shoot me an email! (skye-7aUMex@proton.me)
