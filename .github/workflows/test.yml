@@ -25,8 +25,7 @@ jobs:
 
       # Install Visual Studio Build Tools
       - name: Install Visual Studio Build Tools
-        run: choco install windows-sdk-10-version-<VERSION>-buildtools -y
-        # Replace <VERSION> with the version of the Windows SDK you want to use (e.g., 10.0.19041.0)
+        run: choco install windows-sdk-10-version-10.0.19041.0-buildtools -y
 
       # Build check.c using the Visual Studio compiler
       - name: Build check.c
