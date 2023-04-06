@@ -2,7 +2,13 @@
 
 A Rust program to set the desktop background on Windows 10
 
-## Operation notes
+## Executables
+
+wallpaper.exe -> The main program
+
+check.exe -> Checks if wallpaper.exe should be able to run on your system
+
+## Operation notes - Main program
 
 To run the program: run wallpaper.exe
 
