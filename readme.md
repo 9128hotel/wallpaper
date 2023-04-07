@@ -25,11 +25,11 @@ The path must not have a space in it, or any other non-path characters.
 `C:\Wallpapers\background.jpg`
 
 **An example of an invalid path is:**<br>
-`"C:\Wallpapers\background.jpg"<br>
-C:\Wallpapers Cool\background.jpg<br>
-C:\\\\Wallpapers\\\\background.jpg<br>
-C:/Wallpapers/background.jpg<br>
-C:\Wallpapers\background.jpg\`<br><br>
+`"C:\Wallpapers\background.jpg"`<br>
+`C:\Wallpapers Cool\background.jpg`<br>
+`C:\\\\Wallpapers\\\\background.jpg`<br>
+`C:/Wallpapers/background.jpg`<br>
+`C:\Wallpapers\background.jpg\`<br><br>
 
 ## Issues
 
