@@ -1,4 +1,4 @@
-name: Build and Test (check)
+name: Check Build
 
 on:
   push:
@@ -9,22 +9,21 @@ on:
       - master
 
 jobs:
-  build-test:
+  build-check:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
 
       # Install Visual Studio Build Tools
       - name: Install Visual Studio Build Tools
-        run: choco install windows-sdk-10-version-10.0.26624-buildtools -y
-        # Replace <VERSION> with the version of the Windows SDK you want to use (e.g., 10.0.19041.0)
+        run: choco install visualstudio2019buildtools --package-parameters "--allWorkloads --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64" -y
 
       # Build check.c using the Visual Studio compiler
       - name: Build check.c
         run: MSBuild.exe check/check/check.vcxproj /p:Configuration=Release
 
-      # Copy executable to the root of the repository
-      - name: Copy executable to root of repository
+      # Copy executables to the root of the repository
+      - name: Copy executables to root of repository
         run: |
           cp check/check/Release/check.exe ./executables/
         working-directory: ${{ github.workspace }}
