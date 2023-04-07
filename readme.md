@@ -1,3 +1,6 @@
+![Checks passing](https://img.shields.io/github/checks-status/9128hotel/wallpaper/master)
+![Open issues](https://img.shields.io/github/issues/9128hotel/wallpaper)
+![Version](https://img.shields.io/badge/version-1.0-blue)
 # Wallpaper
 
 A Rust program to set the desktop background on Windows 10
