@@ -1,4 +1,4 @@
-name: Build and Test
+name: Build and Test (check)
 
 on:
   push:
@@ -14,17 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # Install Rust and Cargo
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
-
-      # Build main.rs using Cargo
-      - name: Build main.rs
-        run: cargo build --release
-        working-directory: wallpaper
-
       # Install Visual Studio Build Tools
       - name: Install Visual Studio Build Tools
         run: choco install windows-sdk-10-version-10.0.19041.0-buildtools -y
@@ -34,9 +23,8 @@ jobs:
       - name: Build check.c
         run: MSBuild.exe check/check/check.vcxproj /p:Configuration=Release
 
-      # Copy executables to the root of the repository
-      - name: Copy executables to root of repository
+      # Copy executable to the root of the repository
+      - name: Copy executable to root of repository
         run: |
-          cp wallpaper/target/release/main.exe ./executables/
           cp check/check/Release/check.exe ./executables/
         working-directory: ${{ github.workspace }}
