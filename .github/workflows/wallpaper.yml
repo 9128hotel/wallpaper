@@ -1,0 +1,32 @@
+name: Build and Test (wallpaper)
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build-test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # Install Rust and Cargo
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      # Build main.rs using Cargo
+      - name: Build main.rs
+        run: cargo build --release
+        working-directory: wallpaper
+
+      # Copy executable to the root of the repository
+      - name: Copy executable to root of repository
+        run: |
+          cp wallpaper/target/release/main.exe ./executables/
+        working-directory: ${{ github.workspace }}
