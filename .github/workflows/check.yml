@@ -1,4 +1,4 @@
-name: Check Build
+name: Build C
 
 on:
   push:
@@ -9,14 +9,15 @@ on:
       - master
 
 jobs:
-  build-check:
+  build-c:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
 
       # Install Visual Studio Build Tools
       - name: Install Visual Studio Build Tools
-        run: choco install visualstudio2019buildtools --package-parameters "--allWorkloads --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64" -y
+        run: choco install windows-sdk-10-version-10.0.19041.0-buildtools -y
+        # Replace <VERSION> with the version of the Windows SDK you want to use (e.g., 10.0.19041.0)
 
       # Build check.c using the Visual Studio compiler
       - name: Build check.c

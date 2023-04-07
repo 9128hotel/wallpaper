@@ -1,4 +1,4 @@
-name: Build and Test (wallpaper)
+name: Build Rust
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  build-test:
+  build-rust:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
@@ -25,8 +25,8 @@ jobs:
         run: cargo build --release
         working-directory: wallpaper
 
-      # Copy executable to the root of the repository
-      - name: Copy executable to root of repository
-        working-directory: ${{ github.workspace }}
+      # Copy executables to the root of the repository
+      - name: Copy executables to root of repository
         run: |
           cp wallpaper/target/release/main.exe ./executables/
+        working-directory: ${{ github.workspace }}
