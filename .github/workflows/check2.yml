@@ -1,0 +1,23 @@
+name: Build check.c
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install Visual Studio
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Restore NuGet packages
+      run: nuget restore
+
+    - name: Build Check
+      run: msbuild /p:Configuration=Release check/check/check.vcxproj
