@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install build tools
-      uses: microsoft/setup-vs-build-tools@v1
+      uses: https://github.com/microsoft/setup-vs-build-tools@v1.0.0
       with:
         vs-version: '16.11.x'
         include-prerelease: true
