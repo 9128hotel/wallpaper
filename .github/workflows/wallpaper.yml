@@ -24,9 +24,3 @@ jobs:
       - name: Build main.rs
         run: cargo build --release
         working-directory: wallpaper
-
-      # Copy executables to the root of the repository
-      - name: Copy executables to root of repository
-        run: |
-          cp wallpaper/target/release/main.exe ./executables/
-        working-directory: /
