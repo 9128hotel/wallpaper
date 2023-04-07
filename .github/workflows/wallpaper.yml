@@ -29,4 +29,4 @@ jobs:
       - name: Copy executables to root of repository
         run: |
           cp wallpaper/target/release/main.exe ./executables/
-        working-directory: ${{ github.workspace }}
+        working-directory: /
