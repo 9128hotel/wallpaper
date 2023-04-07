@@ -1,28 +1,16 @@
-name: Build MyProject
-
+name: Compile check.c using Visual Studio Compiler
 on:
   push:
-    branches: master
-  pull_request:
-    branches: master
-
+    branches:
+      - master
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Install build tools
-      uses: https://github.com/microsoft/setup-vs-build-tools@v1.0.0
-      with:
-        vs-version: '16.11.x'
-        include-prerelease: true
-        workloads: 'Microsoft.VisualStudio.Workload.ManagedDesktopBuildTools'
-
-    - name: Restore NuGet packages
-      run: nuget restore MyProject.sln
-
-    - name: Build project
-      run: msbuild MyProject.sln /t:Build /p:Configuration=Release
+    - uses: actions/checkout@v2
+    - name: Setup MSVC compiler environment
+      uses: microsoft/setup-msvc@v1.6.2
+    - name: Build check.c
+      run: |
+        cd check/check
+        msbuild /p:Configuration=Release check.vcxproj
