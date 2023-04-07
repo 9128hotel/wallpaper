@@ -1,9 +1,10 @@
-name: Build check.c
+name: Build MyProject
 
 on:
   push:
-    branches:
-      - master
+    branches: master
+  pull_request:
+    branches: master
 
 jobs:
   build:
@@ -13,11 +14,15 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Install Visual Studio
-      uses: microsoft/setup-msbuild@v1.0.2
+    - name: Install build tools
+      uses: microsoft/setup-vs-build-tools@v1
+      with:
+        vs-version: '16.11.x'
+        include-prerelease: true
+        workloads: 'Microsoft.VisualStudio.Workload.ManagedDesktopBuildTools'
 
     - name: Restore NuGet packages
-      run: nuget restore
+      run: nuget restore MyProject.sln
 
-    - name: Build Check
-      run: msbuild /p:Configuration=Release check/check/check.vcxproj
+    - name: Build project
+      run: msbuild MyProject.sln /t:Build /p:Configuration=Release
