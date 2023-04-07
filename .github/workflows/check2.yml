@@ -1,4 +1,4 @@
-name: Build check.c
+name: Build check
 
 on:
   push:
