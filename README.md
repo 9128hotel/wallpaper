@@ -17,11 +17,11 @@ I recommend doing this in command prompt for debugging
 
 The path must not have a space in it, or any other non-path characters. 
 
-**An example of a valid path is:**
-`C:\Wallpapers\background.jpg`
+**An example of a valid path is:**<br>
+`C:\Wallpapers\background.jpg`<br>
+`"C:\Wallpapers\background.jpg"`<br>
 
 **An example of an invalid path is:**<br>
-`"C:\Wallpapers\background.jpg"`<br>
 `C:\Wallpapers Cool\background.jpg`<br>
 `C:\\\\Wallpapers\\\\background.jpg`<br>
 `C:/Wallpapers/background.jpg`<br>
